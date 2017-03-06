@@ -7,7 +7,7 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.use('/calculadora', express.static('calculator));
+app.use('/calculadora', express.static('calculator'));
 app.use('/agenda', express.static('calendar'));
 
 
