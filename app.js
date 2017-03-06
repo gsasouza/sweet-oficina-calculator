@@ -7,18 +7,16 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+app.use('/calculadora', express.static('calculator));
+app.use('/agenda', express.static('calendar'));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-app.get('/', function (req, res) {
-	res.send('Server is runing on port : ' + port);
-});
-
 app.get('/update', function (req, res) {
-	res.send('GET');
+	res.redirect('/agenda');
 });
 
 app.post('/update', function (req, res) {

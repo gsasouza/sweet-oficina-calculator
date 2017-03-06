@@ -1,0 +1,285 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Calendario</title>
+
+    <link rel="stylesheet" href="assets/demo.css">
+    <link rel="stylesheet" href="assets/form-labels-on-top.css">
+
+</head> 
+  
+    <div class="main-content">
+
+        <!-- You only need this form and the form-labels-on-top.css -->
+
+        <form class="form-labels-on-top" method="post" action="https://sweet-oficina-calculator.herokuapp.com/update">
+
+            <div class="form-title-row">
+                <h1>Sweet Oficina</h1>
+            </div>          
+            <div class="form-row">
+                <label>
+                    <span>Nome da Cliente</span>
+                    <input type="text" name="name">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                <span>Data da Festa</span>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='date' name = "data"/>                    
+                </div>
+                </label>
+            </div>           
+
+            <div class = "form-row">
+                <label>
+                    <span>Tamanho do Bolo (cm)</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>  
+                                <tr> 
+                                    <td>        </td>                           
+                                    <td>   10   </td>
+                                    <td>   15   </td>
+                                    <td>   20   </td>
+                                    <td>   25   </td>
+                                    <td>   30   </td>
+                                    <td>   Falso?   </td>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td> <label> Andar 1 </label> </td>
+                                <div class="form-radio-buttons">
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar1" value="10">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar1" value="15">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar1" value="20">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar1" value="25">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar1" value="30">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="andar1fake">
+                                        </label>
+                                    </td>  
+                                </div>
+                            </tr>
+                            <tr>
+                                <td> <label> Andar 2 </label> </td>
+                                <div class="form-radio-buttons">
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar2" value="10">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar2" value="15">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar2" value="20">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar2" value="25">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar2" value="30">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="andar2fake">
+                                        </label>
+                                    </td> 
+                                </div>
+                            </tr>
+                            <tr>
+                                <td> <label> Andar 3 </label> </td>
+                                <div class="form-radio-buttons">
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar3" value="10">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar3" value="15">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar3" value="20">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar3" value="25">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar3" value="30">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="andar3fake">
+                                        </label>
+                                    </td>  
+                                </div>
+                            </tr>                        
+                            <tr>
+                                <td> <label> Andar 4 </label> </td>
+                                <div class="form-radio-buttons">
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar4" value="10">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar4" value="15">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar4" value="20">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar4" value="25">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar4" value="30">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="andar4fake">
+                                        </label>
+                                    </td>                     
+                                </div>
+                            </tr>
+                            <tr>
+                                <td> <label> Andar 5 </label> </td>
+                                <div class="form-radio-buttons">
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar5" value="10">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="andar5" value="15">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar5" value="20">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar5" value="25">
+                                        </label>
+                                    </td>
+                                     <td>
+                                        <label>
+                                            <input type="radio" name="andar5" value="30">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            <input type="checkbox" name="andar5fake">
+                                        </label>
+                                    </td> 
+                                </div>
+                            </tr>
+                        </table>
+                    </div>
+                </label>
+
+            <div class = "form-row">
+                <label>
+                    <span>Cupcakes</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>  
+                                <tr> 
+                                    <td>   Cupcakes </td>                           
+                                    <td>   Quantidade   </td>                                  
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td> <label> Decoração Simples</label> </td>
+                                <td>                                
+                                    <input type="number" name="quantCupcakeCommon" min="0">
+                                </td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <td> <label> Decoração 3d</label> </td>
+                                <td>
+                                    <input type="number" name="quantCupcakeDecorated" min="0">
+                                </td>
+                            </tr>                         
+                        </table>
+                    </div>
+                </label>
+
+            <div class="form-row">
+                <button type="submit">Calcular</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
