@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', function (req, res) {
 	res.redirect('/calculadora');
 })
+
 app.post('/caluladora', function (req, res) {
 	let newCalc = new Calculator(req.body);
 	res.send(newCalc.getPriceInfo());
