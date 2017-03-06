@@ -7,17 +7,22 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/update', function (req, res) {
-	console.log('GET');
+
+app.get('/', function (req, res) {
+	res.send('Server is runing on port : ' + port);
 });
 
 app.get('/update', function (req, res) {
-	console.log('POST');
+	res.send('GET');
+});
+
+app.post('/update', function (req, res) {
+	res.send('POST');
 })
 
 
