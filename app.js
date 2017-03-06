@@ -22,6 +22,7 @@ app.get('/update', function (req, res) {
 });
 
 app.post('/update', function (req, res) {
+	console.log(req.body)
 	res.send('POST');
 })
 
