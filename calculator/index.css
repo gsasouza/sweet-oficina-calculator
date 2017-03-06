@@ -1,5 +1,8 @@
 html{
-    background-color: #ff5c33;
+    background-color: #f93636;
+}
+body{
+    background-color: #f93636;
 }
 
 
@@ -29,19 +32,20 @@ html{
 .form-labels-on-top h1{
     display: inline-block;
     box-sizing: border-box;
-    color: #4C565E;
+    color: #000000;
     font-size: 24px;
     padding: 0 0 12px 0;
     margin: 0;
-    border-bottom: 2px solid #6CAEE0;
+    border-bottom: 3px solid #f93636;
 }
 
 .form-labels-on-top .form-row > label span{
     display: block;
     box-sizing: border-box;
-    color:  #5f5f5f;
+    color:  #000000;
     width: 200px;
     padding: 0 0 12px;
+    font: bold 17px;
 }
 
 .form-labels-on-top input{
@@ -60,7 +64,7 @@ html{
 }
 
 .form-labels-on-top select{
-    background-color: #ffffff;
+    background-color: #000000;
     color:  #5f5f5f;
     box-sizing: border-box;
     width: 240px;
@@ -85,7 +89,7 @@ html{
 
 .form-labels-on-top button{
     border-radius: 2px;
-    background-color:  #6caee0;
+    background-color:  #f93636;
     color: #ffffff;
     font-weight: bold;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);

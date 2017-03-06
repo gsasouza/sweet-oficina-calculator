@@ -46,36 +46,42 @@ const PRICE_TRUFFLE = {
 	'gDecorated3d' : 1.75,
 };
 
+const TAX = {
+	'floor' : 10,
+	'base' : 10,
+	'taxi' : 10
+}
+
 const quant = { 
-andar1: '30',
-andar2: '25',
-andar3: '20',
-andar3fake: 'on',
-andar4: '15',
-andar5: '10',
-andar5fake: 'on',
-cupcakeCommon: '1',
-cupcakeDecorated: '1',
-truffleMCommon: '1',
-truffleMDecorated2d: '1',
-truffleMDecorated3d: '1',
-truffleGCommon: '1',
-truffleGDecorated2d: '1',
-truffleGDecorated3d: '1',
-chocoAppleM: '1',
-chocoAppleG: '1',
-lollypop: '1',
-brigadeiro: '1',
-brownieCommon: '1',
-brownieRecheado: '1',
-brownieCustom: '1',
-pictureFrameP: '1',
-pictureFrameG: '1',
-chocoSpoon1: '1',
-chocoSpoon2: '1',
-truffleMiniCake1: '1',
-truffleMiniCake2: '1',
-potCake: '1' 
+	andar1: '30',
+	andar2: '25',
+	andar3: '20',
+	andar3fake: 'on',
+	andar4: '15',
+	andar5: '10',
+	andar5fake: 'on',
+	cupcakeCommon: '1',
+	cupcakeDecorated: '1',
+	truffleMCommon: '1',
+	truffleMDecorated2d: '1',
+	truffleMDecorated3d: '1',
+	truffleGCommon: '1',
+	truffleGDecorated2d: '1',
+	truffleGDecorated3d: '1',
+	chocoAppleM: '1',
+	chocoAppleG: '1',
+	lollypop: '1',
+	brigadeiro: '1',
+	brownieCommon: '1',
+	brownieRecheado: '1',
+	brownieCustom: '1',
+	pictureFrameP: '1',
+	pictureFrameG: '1',
+	chocoSpoon1: '1',
+	chocoSpoon2: '1',
+	truffleMiniCake1: '1',
+	truffleMiniCake2: '1',
+	potCake: '1' 
 }
 
 class Calculator {	
@@ -125,7 +131,14 @@ class Calculator {
 					});
 				}								
 			}
-		}		
+		}
+		let tax;
+		if(cake.length > 0) {
+			tax = (cake.length - 1) * TAX.floor;
+			cakePrice += tax;
+			if(quant.baseTax) cakePrice += TAX.base;	
+		}
+		if(quant.taxiTax) cakePrice += TAX.taxi;
 		return cb(cake, cakePrice);
 	};
 
@@ -297,5 +310,8 @@ class Calculator {
 		});
 	};
 }
+
+let newCalc = new Calculator(quant);
+console.log(newCalc); 	
 
 module.exports = Calculator;
