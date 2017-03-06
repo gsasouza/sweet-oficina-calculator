@@ -2,6 +2,7 @@ html{
     background-color: #ff5c33;
 }
 
+
 .form-labels-on-top{
     box-sizing: border-box;
     max-width: 600px;
@@ -16,7 +17,7 @@ html{
 }
 
 .form-labels-on-top .form-row{
-    text-align: center;
+    text-align: left;
     max-width: 500px;
     margin: 25px auto 0;
 }

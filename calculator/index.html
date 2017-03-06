@@ -8,7 +8,6 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <meta charset="utf-8">
@@ -16,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Calculadora de Preços Sweet Oficina</title>
-    
+
     <link rel="stylesheet" href="index.css">
 
 </head> 
@@ -227,6 +226,7 @@
                         </table>
                     </div>
                 </label>
+            </div>
 
             <div class = "form-row">
                 <label>
@@ -245,19 +245,176 @@
                                 Simples</label> </td>
                                 <td class="col-sm-1">                               
                                     <input type="number" class="form-control" 
-                                    name="quantCupcakeCommon" min="0">                                
+                                    name="cupcakeCommon" min="0">                                
                                 </td>                                
                             </tr>
                             <tr>
                                 <td> <label> Decoração 
                                 3D</label> </td>
                                 <td>
-                                    <input type="number" class="form-control" name="quantCupcakeDecorated" min="0">
+                                    <input type="number" class="form-control" name="cupcakeDecorated" min="0">
                                 </td>
                             </tr>                         
                         </table>
                     </div>
                 </label>
+            </div>
+
+            <div class = "form-row">
+                <label>
+                    <span>Trufas</span>
+                    <div class="table-responsive"> 
+                        <table class="table">
+                            <thead>  
+                                <tr> 
+                                    <td>                </td>                        
+                                    <td>   Quantidade   </td>                             
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td> <label>Simples (M) </label> </td>
+                                <td class="col-sm-1">                               
+                                    <input type="number" class="form-control" 
+                                    name="truffleMCommon" min="0">                               
+                                </td>                                
+                            </tr>
+                            <tr>
+                                <td> <label>Decorada 2D (M)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleM2d" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Decorada 3D (M)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleM3d" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Simples (G)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleGCommon" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Decorada 2D (G)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleG2d" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Decorada 3D (G)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleG3d" min="0">
+                                </td>
+                            </tr>                              
+                        </table>
+                    </div>
+                </label>
+            </div>
+
+            <div class = "form-row">
+                <label>
+                    <span>Personalizados</span>
+                    <div class="table-responsive"> 
+                        <table class="table">
+                            <thead>  
+                                <tr> 
+                                    <td>                </td>                        
+                                    <td>   Quantidade   </td>                             
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td> <label> Maça de Chocolate (M) </label> </td>
+                                <td class="col-sm-1">                               
+                                    <input type="number" class="form-control" 
+                                    name="chocoAppleM" min="0">                               
+                                </td>                                
+                            </tr>
+                            <tr>
+                                <td> <label> Maça de Chocolate (G)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="chocoAppleG" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Pirulito</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="lollypop" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Brigadeiro de Copo</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="brigadeiro" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Brownie (Sem Recheio)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="brownieCommon" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Brownie (Recheio Simples)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="brownieRecheado" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Brownie (Recheio Personalizado)</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="brownieCustom" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Porta-retrato (P) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="pictureFrameP" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Porta-retrato (G) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="pictureFrameG" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Colher de Chocolate (Simples) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="chocoSpoon1" min="0">
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td> <label>Colher de Chocolate (Com Brigadeiro) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="chocoSpoon2" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Trufa Mini Bolo (Simples) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleMiniCake1" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Trufa Mini Bolo (Decorada) </label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="truffleMiniCake2" min="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <label>Bolo no Pote</label> </td>
+                                <td>
+                                    <input type="number" class="form-control" name="potCake" min="0">
+                                </td>
+                            </tr>                                 
+                        </table>
+                    </div>
+                </label>
+            </div>
 
             <div class="form-row">
                 <button type="submit">Calcular</button>
