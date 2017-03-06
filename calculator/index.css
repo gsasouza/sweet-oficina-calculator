@@ -24,6 +24,23 @@ body{
     max-width: 500px;
     margin: 25px auto 0;
 }
+.table-center{
+    padding-top: 10px;
+    padding-left: 70px;
+}
+.table-center2{
+    padding-left: 30px;
+}
+
+.table-number{
+    padding-top: -10px;
+    padding-left: 0px;
+}
+
+.panel-danger > .panel-heading-custom {
+    background: #ff7ffc; color: #000000;
+    text-align: center;
+}
 
 .form-labels-on-top .form-title-row{
     margin: 0 auto 40px;
@@ -36,7 +53,7 @@ body{
     font-size: 24px;
     padding: 0 0 12px 0;
     margin: 0;
-    border-bottom: 3px solid #f93636;
+    border-bottom: 3px solid #ff7ffc;
 }
 
 .form-labels-on-top .form-row > label span{
@@ -86,16 +103,22 @@ body{
 .form-labels-on-top .form-radio-buttons input{
     width: auto;
 }
-
+.text-center{
+    text-align: center
+}
+.tax-box{
+    text-align: center;
+    padding-left: 130px;
+}
 .form-labels-on-top button{
     border-radius: 2px;
-    background-color:  #f93636;
-    color: #ffffff;
-    font-weight: bold;
+    background-color:  #ff7ffc;
+    color: #000000;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
     padding: 14px 22px;
     border: 0;
     margin-top: 15px;
+    margin-left: 190px;
 }
 
 /*	Making the form responsive. Remove this media query
