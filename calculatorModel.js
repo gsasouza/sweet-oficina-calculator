@@ -135,9 +135,9 @@ class Calculator {
 		let tax;
 		if(cake.length > 0) {
 			tax = (cake.length - 1) * TAX.floor;
-			cakePrice += tax;
-			if(quant.baseTax) cakePrice += TAX.base;	
+			cakePrice += tax;				
 		}
+		if(quant.baseTax) cakePrice += TAX.base;
 		if(quant.taxiTax) cakePrice += TAX.taxi;
 		return cb(cake, cakePrice);
 	};
