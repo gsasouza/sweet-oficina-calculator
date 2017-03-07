@@ -312,7 +312,4 @@ class Calculator {
 	};
 }
 
-let newCalc = new Calculator(quant);
-console.log(newCalc); 	
-
 module.exports = Calculator;
