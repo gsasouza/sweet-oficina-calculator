@@ -137,6 +137,7 @@ class Calculator {
 			tax = (cake.length - 1) * TAX.floor;
 			cakePrice += tax;				
 		}
+		console.log(quant);
 		if(quant.baseTax) cakePrice += TAX.base;
 		if(quant.taxiTax) cakePrice += TAX.taxi;
 		return cb(cake, cakePrice);
