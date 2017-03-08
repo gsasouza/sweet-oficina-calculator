@@ -1,0 +1,78 @@
+doctype html
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Calculadora de Pre&ccedil;os Sweet Oficina
+    link(rel='stylesheet', href='/css/styles.css')
+  body
+    .main-content
+      form.form-labels-on-top(method='get', action='https://sweet-oficina-calculator.herokuapp.com/caluladora')
+        .form-title-row
+          h1 Sweet Oficina
+        .form-title-row
+          h2 Valor total do or&ccedil;amento: R$ #{precoTotal}
+        .panel.panel-danger
+          .panel-heading.panel-heading-custom
+            h4.panel-title
+              a(data-toggle='collapse', href='#collapsecake') Bolo
+          #collapsecake.panel-collapse.collapse
+            .panel-body
+              .form-row
+                ul
+                  -var values = bolo;
+                  each val, index in values
+                    -var floor = index + 1;
+                    li= floor + "º Andar - " + val.tipo + " : R$ " + val.preço
+
+        .panel.panel-danger
+          .panel-heading.panel-heading-custom
+            h4.panel-title
+              a(data-toggle='collapse', href='#collapsecupcake') Cupcakes
+          #collapsecupcake.panel-collapse.collapse
+            .panel-body
+              .form-row
+                 ul
+                  -var values = cupcakes;
+                  each val in values                   
+                    li= val.quantidade + " " + val.tipo+ " : R$ " + val.preço
+        .panel.panel-danger
+          .panel-heading.panel-heading-custom
+            h4.panel-title
+              a(data-toggle='collapse', href='#collapsetruffle') Trufas
+          #collapsetruffle.panel-collapse.collapse
+            .panel-body
+              .form-row
+                 ul
+                  -var values = trufas;
+                  each val in values                   
+                    li= val.quantidade + " " + val.tipo + " : R$" + val.preço
+        .panel.panel-danger
+          .panel-heading.panel-heading-custom
+            h4.panel-title
+              a(data-toggle='collapse', href='#collapsecustom') Personalizados
+          #collapsecustom.panel-collapse.collapse
+            .panel-body
+              .form-row
+                ul
+                  -var values = personalizados;
+                  each val in values                   
+                    li= val.quantidade + " " + val.tipo + " : R$" + val.preço
+        .panel.panel-danger
+          .panel-heading.panel-heading-custom
+            h4.panel-title
+              a(data-toggle='collapse', href='#collapse-tax') Outras Taxas
+          #collapse-tax.panel-collapse.collapse
+            .panel-body
+              .form-row
+                ul
+                  -var values = taxas;
+                  each val in values                   
+                    li= val.tipo + " : R$" + val.preço
+
+        .form-row
+          button(type='submit') Calcular Novamente

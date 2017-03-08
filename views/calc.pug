@@ -1,0 +1,323 @@
+doctype html
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Calculadora de Pre&ccedil;os Sweet Oficina
+    link(rel='stylesheet', href='css/styles.css')
+  body
+    .main-content
+      form.form-labels-on-top(method='post', action='https://sweet-oficina-calculator.herokuapp.com/caluladora')
+        .form-title-row
+          h1 Sweet Oficina
+        .panel-group
+          .panel.panel-danger
+            .panel-heading.panel-heading-custom
+              h4.panel-title
+                a(data-toggle='collapse', href='#collapsecake') Bolo
+            #collapsecake.panel-collapse.collapse
+              .panel-body
+                .form-row
+                  label
+                    span Tamanho do Bolo (cm)
+                    div
+                      .table-responsive
+                        table.table
+                          thead
+                            tr
+                              td
+                              td  10
+                              td  15
+                              td  20
+                              td  25
+                              td  30
+                              td  Falso?
+                          tr
+                            td
+                              label Andar 1
+                            .form-radio-buttons
+                              td
+                                label
+                                  input(type='radio', name='andar1', value='10')
+                              td
+                                label
+                                  input(type='radio', name='andar1', value='15')
+                              td
+                                label
+                                  input(type='radio', name='andar1', value='20')
+                              td
+                                label
+                                  input(type='radio', name='andar1', value='25')
+                              td
+                                label
+                                  input(type='radio', name='andar1', value='30')
+                              td
+                                label
+                                  input(type='checkbox', name='andar1fake')
+                          tr
+                            td
+                              label Andar 2
+                            .form-radio-buttons
+                              td
+                                label
+                                  input(type='radio', name='andar2', value='10')
+                              td
+                                label
+                                  input(type='radio', name='andar2', value='15')
+                              td
+                                label
+                                  input(type='radio', name='andar2', value='20')
+                              td
+                                label
+                                  input(type='radio', name='andar2', value='25')
+                              td
+                                label
+                                  input(type='radio', name='andar2', value='30')
+                              td
+                                label
+                                  input(type='checkbox', name='andar2fake')
+                          tr
+                            td
+                              label Andar 3
+                            .form-radio-buttons
+                              td
+                                label
+                                  input(type='radio', name='andar3', value='10')
+                              td
+                                label
+                                  input(type='radio', name='andar3', value='15')
+                              td
+                                label
+                                  input(type='radio', name='andar3', value='20')
+                              td
+                                label
+                                  input(type='radio', name='andar3', value='25')
+                              td
+                                label
+                                  input(type='radio', name='andar3', value='30')
+                              td
+                                label
+                                  input(type='checkbox', name='andar3fake')
+                          tr
+                            td
+                              label Andar 4
+                            .form-radio-buttons
+                              td
+                                label
+                                  input(type='radio', name='andar4', value='10')
+                              td
+                                label
+                                  input(type='radio', name='andar4', value='15')
+                              td
+                                label
+                                  input(type='radio', name='andar4', value='20')
+                              td
+                                label
+                                  input(type='radio', name='andar4', value='25')
+                              td
+                                label
+                                  input(type='radio', name='andar4', value='30')
+                              td
+                                label
+                                  input(type='checkbox', name='andar4fake')
+                          tr
+                            td
+                              label Andar 5
+                            .form-radio-buttons
+                              td
+                                label
+                                  input(type='radio', name='andar5', value='10')
+                              td
+                                label
+                                  input(type='radio', name='andar5', value='15')
+                              td
+                                label
+                                  input(type='radio', name='andar5', value='20')
+                              td
+                                label
+                                  input(type='radio', name='andar5', value='25')
+                              td
+                                label
+                                  input(type='radio', name='andar5', value='30')
+                              td
+                                label
+                                  input(type='checkbox', name='andar5fake')
+        .panel-group
+          .panel.panel-danger
+            .panel-heading.panel-heading-custom
+              h4.panel-title
+                a(data-toggle='collapse', href='#collapsecupcake') Cupcakes
+            #collapsecupcake.panel-collapse.collapse
+              .panel-body
+                .form-row
+                  .table-number
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            td
+                            td
+                              b Quantidade
+                        tr
+                          td
+                            label Decora&ccedil;&atilde;o Simples
+                          td.col-sm-1
+                            input.form-control(type='number', name='cupcakeCommon', min='0')
+                        tr
+                          td
+                            label Decora&ccedil;&atilde;o 3D
+                          td
+                            input.form-control(type='number', name='cupcakeDecorated', min='0')
+        .panel-group
+          .panel.panel-danger
+            .panel-heading.panel-heading-custom
+              h4.panel-title
+                a(data-toggle='collapse', href='#collapsetruffle') Trufas
+            #collapsetruffle.panel-collapse.collapse
+              .panel-body
+                .form-row
+                  label
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            td
+                            td
+                              b Quantidade
+                        tr
+                          td
+                            label Simples (M)
+                          td.col-sm-1
+                            input.form-control(type='number', name='truffleMCommon', min='0')
+                        tr
+                          td
+                            label Decorada 2D (M)
+                          td
+                            input.form-control(type='number', name='truffleMDecorated2d', min='0')
+                        tr
+                          td
+                            label Decorada 3D (M)
+                          td
+                            input.form-control(type='number', name='truffleMDecorated3d', min='0')
+                        tr
+                          td
+                            label Simples (G)
+                          td
+                            input.form-control(type='number', name='truffleGCommon', min='0')
+                        tr
+                          td
+                            label Decorada 2D (G)
+                          td
+                            input.form-control(type='number', name='truffleGDecorated2d', min='0')
+                        tr
+                          td
+                            label Decorada 3D (G)
+                          td
+                            input.form-control(type='number', name='truffleGDecorated3d', min='0')
+        .panel-group
+          .panel.panel-danger
+            .panel-heading.panel-heading-custom
+              h4.panel-title
+                a(data-toggle='collapse', href='#collapsecustom') Personalizados
+            #collapsecustom.panel-collapse.collapse
+              .panel-body
+                .form-row
+                  label
+                    .table-responsive
+                      table.table
+                        thead
+                          tr
+                            td
+                            td
+                              b Quantidade
+                        tr
+                          td
+                            label Ma&ccedil;a de Chocolate (P)
+                          td.col-sm-1
+                            input.form-control(type='number', name='chocoAppleP', min='0')
+                        tr
+                          td
+                            label Ma&ccedil;a de Chocolate (G)
+                          td
+                            input.form-control(type='number', name='chocoAppleG', min='0')
+                        tr
+                          td
+                            label Pirulito
+                          td
+                            input.form-control(type='number', name='lollypop', min='0')
+                        tr
+                          td
+                            label Brigadeiro de Copo
+                          td
+                            input.form-control(type='number', name='brigadeiro', min='0')
+                        tr
+                          td
+                            label Brownie (Sem Recheio)
+                          td
+                            input.form-control(type='number', name='brownieCommon', min='0')
+                        tr
+                          td
+                            label Brownie (Recheio Simples)
+                          td
+                            input.form-control(type='number', name='brownieRecheado', min='0')
+                        tr
+                          td
+                            label Brownie (Recheio Personalizado)
+                          td
+                            input.form-control(type='number', name='brownieCustom', min='0')
+                        tr
+                          td
+                            label Porta-retrato (P)
+                          td
+                            input.form-control(type='number', name='pictureFrameP', min='0')
+                        tr
+                          td
+                            label Porta-retrato (G)
+                          td
+                            input.form-control(type='number', name='pictureFrameG', min='0')
+                        tr
+                          td
+                            label Colher de Chocolate (Simples)
+                          td
+                            input.form-control(type='number', name='chocoSpoon1', min='0')
+                        tr
+                          td
+                            label Colher de Chocolate (Com Brigadeiro)
+                          td
+                            input.form-control(type='number', name='chocoSpoon2', min='0')
+                        tr
+                          td
+                            label Trufa Mini Bolo (Simples)
+                          td
+                            input.form-control(type='number', name='truffleMiniCake1', min='0')
+                        tr
+                          td
+                            label Trufa Mini Bolo (Decorada)
+                          td
+                            input.form-control(type='number', name='truffleMiniCake2', min='0')
+                        tr
+                          td
+                            label Bolo no Pote
+                          td
+                            input.form-control(type='number', name='potCake', min='0')
+        .form-row
+          .panel-group
+            .panel.panel-danger
+              .panel-heading.panel-heading-custom
+                h4.panel-title
+                  a(data-toggle='collapse', href='#collapsetax') Outras Taxas
+              #collapsetax.panel-collapse.collapse
+                .panel-body
+                  label.checkbox-inline
+                    input(type='checkbox', name='taxiTax', checked='')
+                    | Transporte
+                .panel-body
+                  label.checkbox-inline
+                    input(type='checkbox', name='baseTax', checked='')
+                    | Base
+        .form-row
+          button(type='submit') Calcular

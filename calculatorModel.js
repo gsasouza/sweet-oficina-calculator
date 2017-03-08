@@ -105,6 +105,25 @@ class Calculator {
 		return cb(customs, customPrice);
 	};
 
+	calcTaxPrice(quant, cb){
+		let tax = [];
+		let price;
+		let taxPrice = 0;
+		if(this.cake.length > 0) {
+			price = (this.cake.length - 1) * TAX.floor;
+			taxPrice += price;
+			tax.push({'tipo' : 'Banquinho', 'preço' : price});				
+		}
+		if(quant.baseTax) {
+			taxPrice += TAX.base;
+			tax.push({'type' : 'Base', 'price' : TAX.taxi});
+		}
+		if(quant.taxiTax) {
+			taxPrice += TAX.taxi;
+			tax.push({'type' : 'Transporte', 'price' : TAX.taxi});
+		}
+		return cb(tax, taxPrice);
+	}
 	calcCakePrice(quant, cb){
 		let cakePrice = 0;
 		let cake = [];
@@ -131,15 +150,7 @@ class Calculator {
 					});
 				}								
 			}
-		}
-		let tax;
-		if(cake.length > 0) {
-			tax = (cake.length - 1) * TAX.floor;
-			cakePrice += tax;				
-		}
-		console.log(quant);
-		if(quant.baseTax) cakePrice += TAX.base;
-		if(quant.taxiTax) cakePrice += TAX.taxi;
+		}		
 		return cb(cake, cakePrice);
 	};
 
@@ -201,7 +212,7 @@ class Calculator {
 		return cb(cupcakes, cupcakePrice);			
 	};
 	getTotalPrice () {
-		return this.cakePrice + this.trufflePrice + this.cupcakePrice + this.customPrice;
+		return this.cakePrice + this.trufflePrice + this.cupcakePrice + this.customPrice + this.taxPrice;
 	};
 
 	getPriceInfo () {
@@ -238,6 +249,7 @@ class Calculator {
 			'trufas' : [],
 			'personalizados' : [],
 			'bolo' : [],
+			'taxas' : [],
 			'precoTotal' : ''
 		}
 		let keys = Object.keys(translateCupcake);
@@ -273,17 +285,18 @@ class Calculator {
 				});
 			}
 		};
+		if(this.tax) priceInfo.taxas = this.tax;
+
 		let cake = this.cake;
 		function mycomparator(a,b) {
  			return parseInt(a.size, 10) - parseInt(b.size, 10);
 		}
 		cake.sort(mycomparator);
 		for(let i in cake){			
-			let floor = (parseInt(i,10) + 1).toString().concat('º Andar');
 			let size = cake[i].type.toString().concat(' cm');
-			if(cake[i].fake) size.concat(' (Falso)');
+			if(cake[i].fake) size = size.concat(' (Falso)');
 			let bolo = {};
-			bolo[floor] = size;
+			bolo['tipo'] = size;
 			bolo['preço'] = cake[i].price;
 			priceInfo.bolo.push(bolo);
 		}
@@ -305,6 +318,10 @@ class Calculator {
 					this.calcCustomPrice(quant, (customs, customPrice) => {
 						self.customs = customs;
 						self.customPrice = customPrice;
+						this.calcTaxPrice(quant, (tax, taxPrice) => {
+							self.tax = tax;
+							self.taxPrice = taxPrice;
+						})
 					});
 				});
 			});

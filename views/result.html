@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Calculadora de Preços Sweet Oficina</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  
+</head> 
+<body>
+  <div class="main-content">
+    
+    <!-- You only need this form and the form-labels-on-top.css -->
+    
+    <form class="form-labels-on-top" method="post" action="https://sweet-oficina-calculator.herokuapp.com/caluladora">
+      
+      <div class="form-title-row">
+        <h1>Sweet Oficina</h1>
+      </div>
+
+      <div class="form-title-row">
+        <h2>Valor total do orçamento: #precoTotal</h2>
+      </div>
+      
+      <div class="panel panel-danger">
+        <div class="panel-heading panel-heading-custom">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapsecake">Bolo</a>
+          </h4>
+        </div>
+        <div id="collapsecake" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class = "form-row">
+              
+            </div>
+          </div>                    
+        </div>
+      </div>
+    
+      <div class="panel panel-danger">
+        <div class="panel-heading panel-heading-custom">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapsecupcake">Cupcakes</a>
+          </h4>
+        </div>
+        <div id="collapsecupcake" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class = "form-row">             
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-danger">
+        <div class="panel-heading panel-heading-custom">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapsetruffle">Trufas</a>
+          </h4>
+        </div>
+        <div id="collapsetruffle" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class = "form-row">
+
+            </div>
+          </div>                  
+        </div>
+      </div>
+        
+      <div class="panel panel-danger">
+        <div class="panel-heading panel-heading-custom">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapsecustom">Personalizados</a>
+          </h4>
+        </div>
+        <div id="collapsecustom" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class = "form-row">    
+
+            </div>                  
+          </div>                
+        </div>
+      </div>  
+
+      <div class="panel panel-danger">
+        <div class="panel-heading panel-heading-custom">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse-tax">Outras Taxas</a>
+          </h4>
+        </div>
+        <div id="collapse-tax" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class = "form-row">    
+
+            </div>                  
+          </div>                
+        </div>
+      </div>      
+          
+
+        
+        
+      <div class="form-row">
+        <button type="submit">Calcular</button>
+      </div>
+          
+    </form>
+        
+      </div>
+      
+    </body>
+    
+    </html>
+
