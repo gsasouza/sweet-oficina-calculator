@@ -110,6 +110,10 @@ body{
     text-align: center;
     padding-left: 130px;
 }
+.button-center{
+    text-align: center;
+    margin-left: -190px;
+}
 .form-labels-on-top button{
     border-radius: 2px;
     background-color:  #ff7ffc;

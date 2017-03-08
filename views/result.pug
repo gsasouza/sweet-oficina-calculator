@@ -11,7 +11,7 @@ html
     link(rel='stylesheet', href='/css/styles.css')
   body
     .main-content
-      form.form-labels-on-top(method='get', action='https://sweet-oficina-calculator.herokuapp.com/caluladora')
+      .form-labels-on-top
         .form-title-row
           h1 Sweet Oficina
         .form-title-row
@@ -24,10 +24,11 @@ html
             .panel-body
               .form-row
                 ul
-                  -var values = bolo;
-                  each val, index in values
-                    -var floor = index + 1;
-                    li= floor + "º Andar - " + val.tipo + " : R$ " + val.preço
+                  if bolo
+                    -var values = bolo;
+                    each val, index in values
+                      -var floor = index + 1;
+                      li= floor + "º Andar - " + val.tipo + " : R$ " + val.preço
 
         .panel.panel-danger
           .panel-heading.panel-heading-custom
@@ -36,10 +37,11 @@ html
           #collapsecupcake.panel-collapse.collapse
             .panel-body
               .form-row
-                 ul
-                  -var values = cupcakes;
-                  each val in values                   
-                    li= val.quantidade + " " + val.tipo+ " : R$ " + val.preço
+                  ul
+                    if cupcakes
+                      -var values = cupcakes
+                      each val in values                   
+                        li= val.quantidade + " " + val.tipo+ " : R$ " + val.preço
         .panel.panel-danger
           .panel-heading.panel-heading-custom
             h4.panel-title
@@ -47,10 +49,11 @@ html
           #collapsetruffle.panel-collapse.collapse
             .panel-body
               .form-row
-                 ul
-                  -var values = trufas;
-                  each val in values                   
-                    li= val.quantidade + " " + val.tipo + " : R$" + val.preço
+                 ul 
+                  if trufas
+                    -var values = trufas
+                    each val in values                   
+                      li= val.quantidade + " " + val.tipo + " : R$" + val.preço
         .panel.panel-danger
           .panel-heading.panel-heading-custom
             h4.panel-title
@@ -59,9 +62,10 @@ html
             .panel-body
               .form-row
                 ul
-                  -var values = personalizados;
-                  each val in values                   
-                    li= val.quantidade + " " + val.tipo + " : R$" + val.preço
+                  if personalizados
+                    -var values = personalizados 
+                    each val in values                   
+                      li= val.quantidade + " " + val.tipo + " : R$" + val.preço
         .panel.panel-danger
           .panel-heading.panel-heading-custom
             h4.panel-title
@@ -70,9 +74,10 @@ html
             .panel-body
               .form-row
                 ul
-                  -var values = taxas;
-                  each val in values                   
-                    li= val.tipo + " : R$" + val.preço
+                  if taxas
+                    -var values = taxas;
+                    each val in values                   
+                      li= val.tipo + " : R$" + val.preço
 
-        .form-row
+        form.button-center(action='https://sweet-oficina-calculator.herokuapp.com/caluladora', method='get')
           button(type='submit') Calcular Novamente

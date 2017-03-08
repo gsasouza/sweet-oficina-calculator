@@ -116,11 +116,11 @@ class Calculator {
 		}
 		if(quant.baseTax) {
 			taxPrice += TAX.base;
-			tax.push({'type' : 'Base', 'price' : TAX.taxi});
+			tax.push({'tipo' : 'Base', 'preço' : TAX.taxi});
 		}
 		if(quant.taxiTax) {
 			taxPrice += TAX.taxi;
-			tax.push({'type' : 'Transporte', 'price' : TAX.taxi});
+			tax.push({'tipo' : 'Transporte', 'preço' : TAX.taxi});
 		}
 		return cb(tax, taxPrice);
 	}

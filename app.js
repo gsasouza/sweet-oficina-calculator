@@ -19,7 +19,8 @@ app.set('view engine', 'pug');
 
 
 app.get('/', function (req, res) {
-	res.redirect('/calculadora');		
+	res.render('result.pug');
+	//res.redirect('/calculadora');		
 })
 
 app.get('/calculadora', function(req, res){
