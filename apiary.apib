@@ -1,0 +1,365 @@
+FORMAT: 1A
+
+#Empire
+
+SOFTEAM - EMPRESA JUNIOR DE COMPUTAÇÃO - 2016
+
+# Data Structures
+
+## Client (object)
+
++ cnpj: 59425156000167 (string, required) - The CNPJ of the client's Company
++ name: SOFTEAM EMPRESA JUNIOR DE COMPUTAÇÃO (string, required) - The name of the client's Company
++ status: ATIVO (string, required) - If the client is active in the system this value should be "ativo", else, should be "inativo"
++ email: softeam@softeam.com (string, required) - The email of the client's Company
++ contact : +5579999995555 (string, required) - The contact number of the client
++ adress (Adress) - The adress of the client's Company
+
+## Adress (object)
+
++ publicPlace : Avenida Marechal Rondon (string, required)
++ zip: 49090000 (string, required)
++ neighborhood: Bugio (string, required)
++ number: 1000 (string, required)
++ city: Aracaju (string, required)
++ uf: SE (string, required)
+
+## Collaborator (object)
+
++ name: Gabriel Souza (string, required) - The name of the collaborator
++ occupation: Desenvolvedor Back-end (string, required) - The occupation of the collaborator
++ access: 2 (number, required) - The access leve of the collaborator. 'Master' should be 2, and 'Simples' should be 1
++ password: abc123 (string, required) - The password of collaborator's user
++ email: gabrielsouza@softeam.com (string, required) - The e-mail of the collaborator
++ collaboratorId : GabrielSouza (string, required) - An id for the collaborator, will be used as a username
+
+## User (object)
+
++ username : GabrielSouza | 59425156000167 (string, required) - If the user is a client the username should be the client's cnpj, else, if is a collaborator should be a collaboratorId
++ password : abc123 (string, required) - The password of the user
+
+## ResetUser (object)
++ username : GabrielSouza | 59425156000167 (string, required) - If the user is a client the username should be the client's cnpj, else, if is a collaborator should be a collaboratorId
++ email : gabriel@softeam.com (string, required) - The password of the user
+
+
+
+# Group Client
+
+Usage of client route in the API
+
+## Client Collection [/api/client/]
+
+### List all Clients [GET]
+
++ Response 200 (application/json)
+    + Attributes (array[Client])
+
+### Create a new Client [POST]
+
++ Request  (application/json)
+
+    + Headers
+    
+            x-access-token : {token}
+    
+    + Body
+
+            {
+                "cnpj": 59425156000167,
+                "name": SOFTEAM - EMPRESA JUNIOR DE COMPUTAÇÃO,
+                "status": ativo,
+                "email": empire@softeam.com,
+                "contact": +5579999995555,
+                "adress": {
+                    "publicPlace": Avenida Marechal Rondon,
+                    "zip": 49090000,
+                    "neighborhood": Bugio,
+                    "number": 1000,
+                    "city": Aracaju,
+                    "uf": SE 
+                }
+            }
+
++ Response 201 (application/json)
+
+    + Body
+        
+            {
+            "status": 201,
+            "data": {
+                "__v" : 0,
+                "_id": "58ae23fafd86a01dc43c3c2a",
+                "clientId": 86,
+                "contact": "+5579999995555",
+                "email": "gabriessouza@gmail.com",
+                "status": "ATIVO",
+                "name": "SOFTEAM",
+                "cnpj": "123",
+                "password": "$2a$10$qDrEQxH.csTa9Wpc/6yzy.vl0ddkmFWjW7v3cAKCEOFagTUxIn8IS",
+                "adress": {
+                    "publicPlace": "AVENIDA MARECHAL RONDON",
+                    "zip": "49090000",
+                    "neighborhood": "BUGIO",
+                    "number": "1000",
+                    "city": "ARACAJU",
+                    "uf": "SE"
+                }
+            },
+            "messages": [
+                {
+                    "type": "success",
+                    "description": "Created.Client",
+                    "message": "Client successfully created"
+                }]
+            }
+
+## Client [/api/client/{clientId}]
+
++ parameters
+    + clientId (number) - the id generated for the client
+
+### List an specific Client [GET]
+
++ Response 200 (application/json)
+    + Attributes (Client)
+
+### Delete an client [DELETE]
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+            "status": 200,
+            "messages": [
+                {
+                "type": "success",
+                "description": "Deleted.Client",
+                "message": "Client successfully removed"
+                }]
+            }
+
+### Update a Client [PUT]
+
++ Request 
+    
+    + Body
+    
+            {
+            
+            }
+            
++ Response 200 (application/json)
+
+    + Body 
+    
+            {
+            }
+            
+# Group Collaborator
+
+Usage of collaborator route in the API
+
+## Collaborator Collection [/api/collaborator]
+
+### List all Collaborators [GET]
+
++ Response 200 (application/json)
+    + Attributes (array[Collaborator])
+
+### Create a new Collaborator [POST]
+
++ Request
+
+    + Body
+
+            {
+            
+            }
+            
++ Response 201 (application/json)
+
+    + Body
+    
+            {
+            
+            }
+            
+## Collaborator [/api/client/{collaboratorId}]
+
++ parameters
+    + collaboratorId (string) - The id assigned to the collaborator
+
+### List an specific Collaborator [GET]
+
++ Response 200 (application/json)
+    + Attributes (Collaborator)
+
+### Delete an collaborator [DELETE]
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+            "status": 200,
+            "messages": [
+                {
+                "type": "success",
+                "description": "Deleted.Collaborator",
+                "message": "Collaborator successfully removed"
+                }]
+            }
+  
+### Update a Collaborator [PUT]
+
++ Request 
+    
+    + Body
+    
+            {
+            
+            }
+            
++ Response 200 (application/json)
+
+    + Body 
+    
+            {
+            }
+
+# Group Authentication 
+
+## Authenticate an User [/api/auth/login]
+
+### Login [POST]
+
++ Request
+    + Attributes (User)
+
+    + Body
+        
+            {
+            "username" : "GabrielSouza"
+            "password" : "abc123"
+            }
+            
+
++ Response 200 (application/json)
+
+    + Body
+        
+            {
+            
+            }
+
+## Revoke a Token [/api/auth/token]
+
+### Revoke [POST]
+
++ Request
+
+    + Body 
+    
+            {
+            "token" : "COLOCAR UM TOKEN DE EXEMPLO AQUI"
+            }
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+            }
+            
+## Reset user password [/api/auth/reset]
+
+### Reset [POST]
+
++ Request
+
+    + Attributes (ResetUser)
+
+    + Body 
+    
+            {
+            "username" : "COLOCAR UM TOKEN DE EXEMPLO AQUI",
+            "email" : "user@company.com"
+            }
+    + Schema 
+    
+            
+            
+            
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+            }
+# Group Balance Sheet
+
+## Upload a new Balance [/api/balanceSheet/upload/{clientId}]
+
++ parameters
+    + clientId (string) - The id assigned to the client
+
+### Upload [POST]
+
++ Request 
+
+    + Body
+            
+            {
+            }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+            }
+    
+## Get data for the graphics [/api/balanceSheet/{clientId}]
+
++ parameters
+    + clientId (string) - The id assigned to the client
+
+### Get Data [GET]
+
++ Request 
+
+    + Body
+            
+            {
+            }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+            }
+            
+## Download the .xlsx file of the balance sheet [/api/balanceSheet/download/{clientId}]
+        
+
++ parameters
+    + clientId (string) - The id assigned to the client
+
+### Download File [GET] 
+
++ Request 
+
+    + Body
+            
+            {
+            }
+
++ Response 200 (application/json)
+
+    + Body
+            
+            {
+            }
