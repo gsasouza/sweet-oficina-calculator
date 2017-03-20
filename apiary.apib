@@ -172,17 +172,34 @@ Usage of collaborator route in the API
 
 + Request
 
+    + Headers
+    
+            x-access-token : {token}
+
     + Body
 
             {
+                "access" : 1,
+                "email" : "Ampersand@gmail.com",
+                "password" : "yyy",
+                "occupation" : "LM",
+                "name" : "Yorick", 
+                "identifier": "APER"
             
             }
             
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
     + Body
     
             {
+                "status": 200,
+                "data" : {},
+                "messages" : {
+                    "type": "success",
+                    "description": "Created.Collaborator",
+                    "message": "Collaborator successfully created"
+                }
             
             }
             
@@ -219,7 +236,10 @@ Usage of collaborator route in the API
     + Body
     
             {
-            
+                "access" : 2,
+                "email" : "yorick@gmail.com",
+                "occupation" : "XY",
+                "name" : "agent355"
             }
             
 + Response 200 (application/json)
@@ -227,6 +247,14 @@ Usage of collaborator route in the API
     + Body 
     
             {
+                "status" : 200,
+                "data" : 
+                {
+                    "access" : 2,
+                    "email" : "yorick@gmail.com",
+                    "occupation" : "XY" ,
+                    "name" : "AGENT355"
+                }
             }
 
 # Group Authentication 
