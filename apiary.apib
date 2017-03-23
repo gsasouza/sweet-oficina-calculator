@@ -104,14 +104,28 @@ Usage of client route in the API
                     "number": "1000",
                     "city": "ARACAJU",
                     "uf": "SE"
-                }
-            },
+                    }
+                },
             "messages": [
                 {
                     "type": "success",
                     "description": "Created.Client",
                     "message": "Client successfully created"
                 }]
+            }
+            
++ Response 403 (application/json)
+
+    + Body
+    
+            { 
+            "status": 403,
+            "messages": [
+                { 
+                    "type": 'error',
+                    "description": 'Denied.Access',
+                    "message": 'Access denied' 
+                }] 
             }
 
 ## Client [/api/client/{clientId}]
@@ -123,6 +137,20 @@ Usage of client route in the API
 
 + Response 200 (application/json)
     + Attributes (Client)
+
++ Response 404 (application/json)
+
+    + Body
+    
+            { 
+            "status": 404,
+            "messages": [
+                { 
+                    "type": 'error',
+                    "description": 'NotFound.Client',
+                    "message": 'Client not found' 
+                }] 
+            }
 
 ### Delete an client [DELETE]
 
@@ -194,13 +222,29 @@ Usage of collaborator route in the API
     
             {
                 "status": 200,
-                "messages" : {
+                "messages" : [ 
+                {
                     "type": "success",
                     "description": "Created.Collaborator",
                     "message": "Collaborator successfully created"
-                }
+                }]
             
             }
+            
++ Response 409 (application/json)
+
+    + Body
+    
+            {
+                "status": 409,
+                "messages" : [
+                {
+                        "type": "error",
+                        "description": "AlreadyRegistered.Collaborator",
+                        "message": "Collaborator already is registered" 
+                }] 
+            }
+
             
 ## Collaborator [/api/client/{collaboratorId}]
 
@@ -211,6 +255,20 @@ Usage of collaborator route in the API
 
 + Response 200 (application/json)
     + Attributes (Collaborator)
+
++ Response 404 (application/json)
+
+    + Body
+    
+            { 
+            "status": 404,
+            "messages": [
+                { 
+                    "type": 'error',
+                    "description": 'NotFound.Collaborator',
+                    "message": 'Collaborator not found' 
+                }] 
+            }
 
 ### Delete an collaborator [DELETE]
 
