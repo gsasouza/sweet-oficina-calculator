@@ -138,6 +138,19 @@ Usage of client route in the API
 + Response 200 (application/json)
     + Attributes (Client)
 
++ Response 401 (application/json)
+    
+    + Body
+    
+            {
+            "status": 401,
+            "messages": [
+                {  "type": 'error',
+                    "description": 'NotFilled.Token',
+                    "message": 'Token not filled in form'
+                }]
+            }
+
 + Response 404 (application/json)
 
     + Body
