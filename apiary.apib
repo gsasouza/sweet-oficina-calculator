@@ -258,6 +258,20 @@ Usage of collaborator route in the API
                 }] 
             }
 
++ Response 400 (application/json)
+
+    + Body
+    
+            { 
+                "status": 400,
+                "messages" : [ 
+                { 
+                    "type" : "error",
+                    "description" : "NotFilled.Collaboratorid",
+                    "message" : "Collaboratorid not filled in form"
+                    }]
+                }
+
             
 ## Collaborator [/api/client/{collaboratorId}]
 
