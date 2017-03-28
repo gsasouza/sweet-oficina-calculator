@@ -164,6 +164,20 @@ Usage of client route in the API
                     "message": 'Client not found' 
                 }] 
             }
+            
++ Response 500 (application/json)
+
+    + Body
+    
+            { 
+            "status": 500,
+            "messages": [
+                { 
+                    "type": 'error',
+                    "description": 'Unexpected.Server',
+                    "message": '??' 
+                }] 
+            }
 
 ### Delete an client [DELETE]
 
