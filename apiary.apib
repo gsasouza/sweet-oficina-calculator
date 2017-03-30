@@ -202,15 +202,52 @@ Usage of client route in the API
     + Body
     
             {
-            
+                "email" : "meiocontato@treehouse.com"
             }
             
 + Response 200 (application/json)
 
     + Body 
     
-            {
+            { 
+            "status": 200,
+              "data":
+               { _id: "58dd50c03a498a1c8c6c8af9",
+                 "clientId": 17,
+                 "cnpj": "00000000000001",
+                 "name": "SOFTEAM TEST STUDIO",
+                 "email": "meiocontato@treehouse.com",
+                 "status": "2",
+                 "contact": "66666666666",
+                 "password": "$2a$10$i/XOXGtWDKhesP5zFW/Yxe.db96dIB2KoGJcsJAAuPZz2V9SQoicy",
+                 "__v": 0,
+                 "adress" :
+                  { "zip" : "66666666",
+                    "publicPlace" : "RUA JOSE MESSIAS",
+                    "number" : "65",
+                    "neighborhood" : "BERLINDA",
+                    "city" : "ARACAJU",
+                    "uf" : "SE" } },
+              "messages" : [{ 
+                    "type": "success",
+                    "description": "Updated.Client",
+                    "message": "Client successfully updated" 
+                    }]
             }
+
++ Response 403 (application/json)
+
+    + Body
+    
+            {
+            "status": 403,
+            "messages": [{ 
+                "type": "error",
+                "description": "Denied.Access",
+                "message": "Access denied" }] 
+            }
+
+
             
 # Group Collaborator
 
